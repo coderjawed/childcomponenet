@@ -1,0 +1,14 @@
+<form [formGroup]="userForm">
+  <div>
+    <input type="text" placeholder="first name" formControlName="firstName">
+  </div>
+  <div>
+    <input type="text" placeholder="last name" formControlName="lastName">
+  </div>
+  <app-childcomponent [formGroup]="getAddressForChild()"></app-childcomponent>
+  <app-childcomponent2 [formGroup]="getChild2ForChild()"></app-childcomponent2>
+  <button type="button" (click)="submit()">Submit</button>
+</form>
+<pre style="margin-top:50px; border: 1px solid red; width: fit-content">
+  {{userForm.value | json}}
+</pre>
